@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- Database connection settings -->
+		<property name="connection.driver_class">org.postgresql.Driver</property>
+		<property name="connection.url"></property>
+		<property name="connection.username"></property>
+		<property name="connection.password"></property>
+
+		<!-- JDBC connection pool (use the built-in) -->
+		<property name="connection.pool_size">5</property>
+
+		<property name="hibernate.jdbc.batch_size">1000</property>
+
+		<!-- SQL dialect -->
+		<property name="hibernate.dialect">org.hibernatespatial.postgis.PostgisDialect</property>
+		<!-- property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property -->
+
+		<!-- Enable Hibernate's automatic session context management -->
+		<property name="current_session_context_class">thread</property>
+
+		<!-- Disable the second-level cache -->
+		<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">false</property>
+
+		<!-- Echo all executed SQL to stdout -->
+		<property name="format_sql">true</property>
+
+		<!-- Drop and re-create the database3 schema on startup -->
+		<!-- property name="hbm2ddl.auto">create-drop</property -->
+		<!-- Update database schema on startup -->
+		<!-- property name="hbm2ddl.auto">update</property-->
+
+	    <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilNetRollesbroichData" />
+		<mapping class="org.fzj.ibg.odm.tables.datavalues.SoilNetWuestebachData" />
+		<mapping class="org.fzj.ibg.odm.tables.datavalues.SoilCanData" />
+		<mapping class="org.fzj.ibg.odm.tables.datavalues.EifelRurData" />
+
+		<!-- mapping class="org.fzj.ibg.odm.tables.datavalues.MEEC001RawData" /> 
+			<mapping class="org.fzj.ibg.odm.tables.datavalues.ROEC001RawData" /> <mapping 
+			class="org.fzj.ibg.odm.tables.datavalues.ROEC002RawData" /> <mapping class="org.fzj.ibg.odm.tables.datavalues.ROEC003RawData" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.ROEC004RawData" /> <mapping 
+			class="org.fzj.ibg.odm.tables.datavalues.ROEC005RawData" /> <mapping class="org.fzj.ibg.odm.tables.datavalues.RUEC001RawData" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.RUEC002RawData" /> <mapping 
+			class="org.fzj.ibg.odm.tables.datavalues.RUEC003RawData" /> <mapping class="org.fzj.ibg.odm.tables.datavalues.RUEC004RawData" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.RUEC005RawData" /> <mapping 
+			class="org.fzj.ibg.odm.tables.datavalues.SEEC001RawData" /> <mapping class="org.fzj.ibg.odm.tables.datavalues.SEEC002RawData" 
+			/ -->
+
+		<!-- cv -->
+		<mapping class="org.fzj.ibg.odm.tables.cv.DataType" />
+		<mapping class="org.fzj.ibg.odm.tables.cv.IntendedApplication" />
+		<mapping class="org.fzj.ibg.odm.tables.cv.KeywordDefinition" />
+		<mapping class="org.fzj.ibg.odm.tables.cv.KeywordGroupThemeDefinition" />
+		<mapping class="org.fzj.ibg.odm.tables.cv.KeywordGroupThemeRelation" />
+		<mapping class="org.fzj.ibg.odm.tables.cv.KeywordHierarchy" />
+		<mapping class="org.fzj.ibg.odm.tables.cv.KeywordKeywordRelation" />
+		<mapping class="org.fzj.ibg.odm.tables.cv.Offering" />
+		<mapping class="org.fzj.ibg.odm.tables.cv.PhysicalProperty" />
+		<mapping class="org.fzj.ibg.odm.tables.cv.SampleMedium" />
+		<mapping class="org.fzj.ibg.odm.tables.cv.SampleType" />
+		<mapping class="org.fzj.ibg.odm.tables.cv.Thesaurus" />
+		<mapping class="org.fzj.ibg.odm.tables.cv.TopicCategory" />
+		<mapping class="org.fzj.ibg.odm.tables.cv.Unit" />
+		<mapping class="org.fzj.ibg.odm.tables.cv.ValueType" />
+		<mapping class="org.fzj.ibg.odm.tables.cv.Variable" />
+
+		<mapping class="org.fzj.ibg.odm.tables.datavalues.Category" />
+		<mapping class="org.fzj.ibg.odm.tables.datavalues.CensorCode" />
+		<mapping class="org.fzj.ibg.odm.tables.datavalues.OffsetType" />
+		<mapping class="org.fzj.ibg.odm.tables.datavalues.Qualifier" />
+		<mapping class="org.fzj.ibg.odm.tables.datavalues.QualifierGroup" />
+		<mapping class="org.fzj.ibg.odm.tables.datavalues.ProcessingStatus" />
+
+		<!-- binary objects -->
+		<mapping class="org.fzj.ibg.odm.tables.datavalues.BinaryObjectType" />
+		<mapping class="org.fzj.ibg.odm.tables.datavalues.BinaryObjectProperty" />
+		<mapping class="org.fzj.ibg.odm.tables.datavalues.BinaryObjectPropertyName" />
+
+		<!-- importing -->
+		<mapping class="org.fzj.ibg.odm.tables.importing.Agent" />
+		<mapping class="org.fzj.ibg.odm.tables.importing.AgentTask" />
+		<mapping class="org.fzj.ibg.odm.tables.importing.Filter" />
+		<mapping class="org.fzj.ibg.odm.tables.importing.Function" />
+
+		<!-- logger -->
+		<mapping class="org.fzj.ibg.odm.tables.loggers.Logger" />
+		<mapping class="org.fzj.ibg.odm.tables.loggers.LoggerVariable" />
+
+		<!-- management -->
+		<mapping class="org.fzj.ibg.odm.tables.management.DataDirectory" />
+		<mapping class="org.fzj.ibg.odm.tables.management.DataDirectoryPublic" />
+		<mapping class="org.fzj.ibg.odm.tables.management.DataDirectoryQuality" />
+		<mapping class="org.fzj.ibg.odm.tables.management.FileImportLog" />
+		<mapping class="org.fzj.ibg.odm.tables.management.Responsibility" />
+		<mapping class="org.fzj.ibg.odm.tables.management.ResponsibilityGroup" />
+		<mapping class="org.fzj.ibg.odm.tables.management.SensorDataStatus" />
+		<mapping class="org.fzj.ibg.odm.tables.management.Source" />
+		<mapping class="org.fzj.ibg.odm.tables.management.SourceGroup" />
+
+		<!-- threads -->
+		<mapping class="org.fzj.ibg.odm.tables.threads.ThreadSchedule" />
+		<mapping class="org.fzj.ibg.odm.tables.threads.ThreadProperty" />
+		<mapping class="org.fzj.ibg.odm.tables.threads.ThreadPropertyName" />
+
+		<!-- metadata -->
+		<!--  mapping class="org.fzj.ibg.odm.tables.metadata.Metadata" / -->
+
+		<!-- publishing -->
+		<!-- mapping class="org.fzj.ibg.odm.tables.publishing.Downloads" / -->
+		<mapping class="org.fzj.ibg.odm.tables.publishing.Project" />
+		<mapping class="org.fzj.ibg.odm.tables.publishing.Service" />
+		<mapping class="org.fzj.ibg.odm.tables.publishing.ProjectPolicy" />
+		<mapping class="org.fzj.ibg.odm.tables.publishing.SecurityClassifier" />
+
+		<!-- samples -->
+		<mapping class="org.fzj.ibg.odm.tables.samples.Sample" />
+		<!--  mapping class="org.fzj.ibg.odm.tables.samples.SampleMethod" / -->
+
+
+		<!-- sensors -->
+		<mapping class="org.fzj.ibg.odm.tables.sensors.Sensor" />
+		<mapping class="org.fzj.ibg.odm.tables.sensors.SensorComponent" />
+		<mapping class="org.fzj.ibg.odm.tables.sensors.SensorInstance" />
+		<mapping class="org.fzj.ibg.odm.tables.sensors.SensorType" />
+
+		<!-- sites -->
+		<mapping class="org.fzj.ibg.odm.tables.sites.Site" />
+		<mapping class="org.fzj.ibg.odm.tables.sites.SitesLog" />
+		<mapping class="org.fzj.ibg.odm.tables.sites.SpatialReference" />
+		<mapping class="org.fzj.ibg.odm.tables.sites.VerticalDatum" />
+
+		<!-- stored procedures -->
+		<!-- mapping
+			class="org.fzj.ibg.odm.storedprocedures.StoredProceduresWithStringResult" />
+		<mapping class="org.fzj.ibg.odm.sequences.DataValuesSequencer" />
+		<mapping class="org.fzj.ibg.odm.sequences.DownloadsSequencer" />
+		<mapping class="org.fzj.ibg.odm.sequences.FileImportSequencer" />
+		<mapping class="org.fzj.ibg.odm.sequences.HibernateSequencer" />
+		<mapping class="org.fzj.ibg.odm.sequences.IssueSequencer" />
+		<mapping class="org.fzj.ibg.odm.sequences.SampleSequencer" /-->
+
+		<!-- partitions -->
+		<!-- mapping class="org.fzj.ibg.odm.tables.datavalues.SoilNetRollesbroichdata_2011_0" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilNetRollesbroichdata_2011_1" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilNetRollesbroichdata_2012_0" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilNetRollesbroichdata_2012_1" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilNetRollesbroichdata_2013_0" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilNetRollesbroichdata_2013_1" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilNetRollesbroichdata_2014_0" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilNetRollesbroichdata_2014_1" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilNetRollesbroichdata_2015_0" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilNetRollesbroichdata_2015_1" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilNetWuestebachdata_2008_0" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilNetWuestebachdata_2008_1" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilNetWuestebachdata_2009_0" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilNetWuestebachdata_2009_1" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilNetWuestebachdata_2010_0" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilNetWuestebachdata_2010_1" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilNetWuestebachdata_2011_0" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilNetWuestebachdata_2011_1" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilNetWuestebachdata_2012_0" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilNetWuestebachdata_2012_1" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilNetWuestebachdata_2013_0" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilNetWuestebachdata_2013_1" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilNetWuestebachdata_2014_0" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilNetWuestebachdata_2014_1" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilNetWuestebachdata_2015_0" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilNetWuestebachdata_2015_1" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.EifelRurData_2008_0" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.EifelRurData_2008_1" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.EifelRurData_2009_0" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.EifelRurData_2009_1" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.EifelRurData_2010_0" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.EifelRurData_2010_1" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.EifelRurData_2011_0" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.EifelRurData_2011_1" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.EifelRurData_2012_0" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.EifelRurData_2012_1" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.EifelRurData_2013_0" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.EifelRurData_2013_1" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.EifelRurData_2014_0" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.EifelRurData_2014_1" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.EifelRurData_2015_0" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.EifelRurData_2015_1" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilCanData_2011_0" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilCanData_2011_1" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilCanData_2012_0" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilCanData_2012_1" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilCanData_2013_0" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilCanData_2013_1" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilCanData_2014_0" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilCanData_2014_1" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilCanData_2015_0" 
+			/> <mapping class="org.fzj.ibg.odm.tables.datavalues.SoilCanData_2015_1" 
+			/ -->
+
+
+		<!-- Envers Configuration comes HERE -->
+		<listener class="org.hibernate.envers.event.AuditEventListener"
+			type="post-insert" />
+		<listener class="org.hibernate.envers.event.AuditEventListener"
+			type="post-update" />
+		<listener class="org.hibernate.envers.event.AuditEventListener"
+			type="post-delete" />
+		<listener class="org.hibernate.envers.event.AuditEventListener"
+			type="pre-collection-update" />
+		<listener class="org.hibernate.envers.event.AuditEventListener"
+			type="pre-collection-remove" />
+		<listener class="org.hibernate.envers.event.AuditEventListener"
+			type="post-collection-recreate" />
+
+	</session-factory>
+</hibernate-configuration>
